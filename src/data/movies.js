@@ -337,3 +337,5 @@
     release_date: "2019-07-19",
   },
 ];
+
+export default movies;

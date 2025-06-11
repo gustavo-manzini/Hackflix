@@ -1,0 +1,22 @@
+.title {
+  border-radius: 10px;
+  border: #ff6c31 solid 2px;
+  padding: 10px;
+  color: black;
+}
+.title:hover {
+  background-color: #ff6c31;
+  color: white;
+}
+
+.home {
+  border-radius: 10px;
+  border: #ff6c31 solid 2px;
+  padding: 10px;
+  color: black;
+}
+
+.home:hover {
+  background-color: #ff6c31;
+  color: white;
+}
