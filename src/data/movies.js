@@ -1,4 +1,4 @@
-[
+export const movies = [
   {
     id: 11216,
     original_language: "it",

@@ -1,4 +1,4 @@
-import movies from "../data/movies.json";
+import movies from "../data/movies";
 
 function Content() {
   return (
