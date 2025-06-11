@@ -15,8 +15,8 @@ function Content() {
               />
               <div className="card-body">
                 <h5 className="card-title">{movie.title}</h5>
-                <p className="card-text">anio: {movie.year}</p>
               </div>
+              <p className="card-text">año: {movie.release_date}</p>
             </div>
           </div>
         ))}
