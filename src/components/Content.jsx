@@ -1,6 +1,17 @@
 import movies from "../data/movies";
+import ReactStars from "react-rating-stars-component";
+import React, { useState } from "react";
 
 function Content() {
+  conmst[(minRating, setMinRating)] = useState(0);
+
+  const handleRatingCHange = (newRating) => {
+    setMinRating(newRating);
+  };
+
+  const filteredMovies = movies.filter(
+    (movies) => movies.vote_average / 2 >= minRating
+  );
   return (
     <div className="container my-4">
       <h2 className="mb-4 text-center">Peliculas</h2>
@@ -17,10 +28,22 @@ function Content() {
                 <h5 className="card-title">{movie.title}</h5>
               </div>
               <p className="card-text">año: {movie.release_date}</p>
+              <ReactStars
+                count={5}
+                value={movies.vote_average / 2}
+                size={24}
+                edit={false}
+                isHalf={true}
+                activeColor="#ffd700"
+              />
+              <p className="card-text mt-2">
+                Puntaje: {movies.vote_average.toFixed(1)} /10
+              </p>
             </div>
           </div>
         ))}
       </div>
+      <p className="text-center">No hay pelicuas con esta calificación</p>
     </div>
   );
 }
