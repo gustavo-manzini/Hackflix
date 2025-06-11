@@ -1,6 +1,6 @@
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-secondary text-primary-emphasis">
+    <nav className="navbar navbar-expand-lg bg-body-secondary bg text-primary-emphasis">
       <div className="container-fluid">
         <a className="navbar-brand title " href="#">
           Hackflix
@@ -18,7 +18,7 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
-            <a className="nav-link active home" aria-current="page" href="#">
+            <a className="nav-link active" aria-current="page" href="#">
               Home
             </a>
           </div>

@@ -20,3 +20,13 @@
   background-color: #ff6c31;
   color: white;
 }
+
+.movie-card-hover {
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.movie-card-hover:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
