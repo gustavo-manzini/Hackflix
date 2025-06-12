@@ -3,20 +3,21 @@ import ReactStars from "react-rating-stars-component";
 import React, { useState } from "react";
 
 function Content() {
-  conmst[(minRating, setMinRating)] = useState(0);
+  const [minRating, setMinRating] = useState(0);
 
-  const handleRatingCHange = (newRating) => {
+  const handleRatingChange = (newRating) => {
     setMinRating(newRating);
   };
 
   const filteredMovies = movies.filter(
-    (movies) => movies.vote_average / 2 >= minRating
+    (movie) => movie.vote_average / 2 >= minRating
   );
+
   return (
     <div className="container my-4">
-      <h2 className="mb-4 text-center">Peliculas</h2>
+      <h2 className="mb-4 text-center">Películas</h2>
       <div className="row">
-        {movies.slice(0, 300).map((movie) => (
+        {filteredMovies.slice(0, 300).map((movie) => (
           <div key={movie.id} className="col-md-6 col-lg-4 mb-4">
             <div className="card h-100 movie-card-hover">
               <img
@@ -27,23 +28,29 @@ function Content() {
               <div className="card-body">
                 <h5 className="card-title">{movie.title}</h5>
               </div>
-              <p className="card-text">año: {movie.release_date}</p>
+              <p className="card-text">Año: {movie.release_date}</p>
               <ReactStars
                 count={5}
-                value={movies.vote_average / 2}
+                value={movie.vote_average / 2}
                 size={24}
                 edit={false}
                 isHalf={true}
                 activeColor="#ffd700"
               />
               <p className="card-text mt-2">
-                Puntaje: {movies.vote_average.toFixed(1)} /10
+                Puntaje:{" "}
+                {typeof movie.vote_average === "number"
+                  ? movie.vote_average.toFixed(1)
+                  : "No disponible"}{" "}
+                /10
               </p>
             </div>
           </div>
         ))}
       </div>
-      <p className="text-center">No hay pelicuas con esta calificación</p>
+      {filteredMovies.length === 0 && (
+        <p className="text-center">No hay películas con esta calificación</p>
+      )}
     </div>
   );
 }
