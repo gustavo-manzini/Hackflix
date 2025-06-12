@@ -24,12 +24,6 @@ function Navbar() {
             <a className="nav-link active" aria-current="page" href="#">
               Home
             </a>
-            <a className="nav-link" href="#">
-              About
-            </a>
-            <a className="nav-link" href="#">
-              Contact
-            </a>
           </div>
         </div>
       </div>

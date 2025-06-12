@@ -40,7 +40,7 @@
 
 .custom-navbar .navbar-brand,
 .custom-navbar .nav-link {
-  color: #ff6600 !important;
+  color: #ffffff !important;
   font-weight: 600;
   transition: background-color 0.3s, color 0.3s;
   border-radius: 4px;
@@ -50,7 +50,7 @@
 .custom-navbar .nav-link:hover,
 .custom-navbar .nav-link.active {
   background-color: #ff6600 !important;
-  color: #000 !important;
+  color: #ffffff !important;
 }
 
 .custom-navbar .navbar-toggler {
@@ -62,4 +62,12 @@
 }
 .navbar-brand {
   color: white !important;
+}
+
+/* fondo de imagen */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
