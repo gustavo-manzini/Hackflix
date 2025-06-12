@@ -30,3 +30,36 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
+
+/* navbar
+ */
+
+.custom-navbar {
+  background-color: #000 !important;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: #ff6600 !important;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  background-color: #ff6600 !important;
+  color: #000 !important;
+}
+
+.custom-navbar .navbar-toggler {
+  border-color: #ff6600 !important;
+}
+
+.custom-navbar .navbar-toggler-icon {
+  filter: invert(1);
+}
+.navbar-brand {
+  color: white !important;
+}

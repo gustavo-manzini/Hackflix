@@ -1,8 +1,8 @@
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-secondary bg text-primary-emphasis">
+    <nav className="navbar navbar-expand-lg custom-navbar">
       <div className="container-fluid">
-        <a className="navbar-brand title " href="#">
+        <a className="navbar-brand title" href="#">
           Hackflix
         </a>
         <button
@@ -14,12 +14,21 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span
+            className="navbar-toggler-icon"
+            style={{ filter: "invert(1)" }}
+          ></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
             <a className="nav-link active" aria-current="page" href="#">
               Home
+            </a>
+            <a className="nav-link" href="#">
+              About
+            </a>
+            <a className="nav-link" href="#">
+              Contact
             </a>
           </div>
         </div>
