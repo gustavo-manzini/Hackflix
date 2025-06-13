@@ -16,6 +16,24 @@ function Content() {
 
   return (
     <>
+{ 
+
+
+<>
+  <div className="full-width-banner">
+    <img src={headerImg} alt="Hackflix Banner" />
+  </div>
+
+  <div className="container my-4">
+    <h2 className="mb-4 text-center"></h2>
+
+  </div>
+</>
+
+
+}
+
+
       <div className="container my-4">
         <h2 className="mb-4 text-center">Películas</h2>
 
