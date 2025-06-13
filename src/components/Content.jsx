@@ -1,43 +1,28 @@
 import movies from "../data/movies";
-import ReactStars from "react-rating-stars-component";
+import { Rating } from "react-simple-star-rating";
 import React, { useState } from "react";
 import headerImg from "../assets/Baner.png";
+import StarFilter from "./StarFilter";
+
 
 function Content() {
   const [minRating, setMinRating] = useState(0);
 
-  const handleRatingChange = (newRating) => {
-    setMinRating(newRating);
-  };
-
   const filteredMovies = movies.filter(
-    (movie) => movie.vote_average / 2 >= minRating
+    (movie) => movie.vote_average * 20 >= minRating
   );
 
   return (
     <>
-{ 
+      <div className="full-width-banner">
+        <img src={headerImg} alt="Hackflix Banner" />
+      </div>
 
-
-<>
-  <div className="full-width-banner">
-    <img src={headerImg} alt="Hackflix Banner" />
-  </div>
-
-  <div className="container my-4">
-    <h2 className="mb-4 text-center"></h2>
-
-  </div>
-</>
-
-
-}
-
+   <StarFilter ratingValue={minRating} onRatingChange={setMinRating} />
 
       <div className="container my-4">
         <h2 className="mb-4 text-center">Películas</h2>
 
-        {/* LISTA DE PELÍCULAS */}
         <div className="row">
           {filteredMovies.slice(0, 300).map((movie) => (
             <div key={movie.id} className="col-md-6 col-lg-4 mb-4">
@@ -56,13 +41,12 @@ function Content() {
                   <p className="card-text">
                     Año: {new Date(movie.release_date).getFullYear()}
                   </p>
-                  <ReactStars
-                    count={5}
-                    value={movie.vote_average / 2}
+                  <Rating
+                    ratingValue={movie.vote_average * 20}
                     size={24}
-                    edit={false}
-                    isHalf={true}
-                    activeColor="#ffd700"
+                    readonly
+                    fillColor="orange"
+                    emptyColor="lightgray"
                   />
                   <p className="card-text mt-2">
                     Puntaje:{" "}
@@ -77,7 +61,6 @@ function Content() {
           ))}
         </div>
 
-        {}
         {filteredMovies.length === 0 && (
           <p className="text-center">No hay películas con esta calificación</p>
         )}

@@ -14,7 +14,8 @@
     "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-rating-stars-component": "^2.2.0"
+    "react-rating-stars-component": "^2.2.0",
+    "react-simple-star-rating": "^5.1.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
