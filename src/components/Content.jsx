@@ -7,33 +7,48 @@ const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 function Content() {
   const [movies, setMovies] = useState([]);
-  const [minRating, setMinRating] = useState(0);
+  const [minRating, setMinRating] = useState(0); 
 
-  const handleRatingChange = (newRating) => {
-    setMinRating(newRating);
-  };
+const handleRatingChange = (newRating) => {
+  console.log("Rating seleccionado (raw):", newRating);
+  // Si el rating es menor o igual a 5 (entero), asume que es estrellas directas
+  let stars;
+  if (newRating <= 5) {
+    stars = newRating;
+  } else {
+    // Si es múltiplo de 20 (20,40,60...), convierte a estrellas
+    stars = newRating / 20;
+  }
+  console.log("Estrellas calculadas:", stars);
+  setMinRating(stars);
+};
 
   useEffect(() => {
-    // Obtener películas populares desde TMDb
-     console.log("API KEY:", API_KEY); // <-- acá
-    const fetchMovies = async () => {
-      try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es-ES&page=1`
-        );
-        const data = await response.json();
-        setMovies(data.results);
-      } catch (error) {
-        console.error("Error al obtener películas:", error);
-      }
-    };
+   const fetchMovies = async () => {
+  try {
+    const allMovies = [];
 
-    
+    for (let page = 1; page <= 3; page++) {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es-ES&page=${page}`
+      );
+      const data = await response.json();
+      allMovies.push(...data.results);
+    }
+
+    setMovies(allMovies);
+  } catch (error) {
+    console.error("Error al obtener películas:", error);
+  }
+};
+
+
     fetchMovies();
   }, []);
 
+  // Filtrar películas con vote_average >= minRating * 2
   const filteredMovies = movies.filter(
-    (movie) => movie.vote_average * 10 >= minRating
+    (movie) => movie.vote_average >= minRating * 2
   );
 
   return (
@@ -42,7 +57,7 @@ function Content() {
         <img src={headerImg} alt="Hackflix Banner" />
       </div>
 
-      <StarFilter ratingValue={minRating} onRatingChange={handleRatingChange} />
+      <StarFilter ratingValue={minRating * 20} onRatingChange={handleRatingChange} />
 
       <div className="container my-4">
         <h2 className="mb-4 text-center">Películas</h2>
@@ -84,7 +99,7 @@ function Content() {
             <p className="text-center">
               {movies.length === 0
                 ? "Cargando películas..."
-                : "No hay películas con el rating solicitado."}
+                : "Lo sentimos, no se encontraron películas con el rating solicitado."}
             </p>
           )}
         </div>

@@ -17,18 +17,16 @@ export default function StarFilter({ ratingValue, onRatingChange }) {
       </h5>
 
       <div className="d-flex justify-content-center align-items-center gap-3 flex-wrap">
-        <Rating
-          onClick={onRatingChange}
-          ratingValue={ratingValue}
-          size={30}
-          label
-          transition
-          fillColor="orange"
-          emptyColor="gray"
-          showTooltip
-          tooltipArray={["Muy malo", "Malo", "Regular", "Bueno", "Excelente"]}
-        />
-
+      <Rating
+  onClick={(rate) => {
+    console.log("Rating en StarFilter (raw):", rate);
+    onRatingChange(rate);
+  }}
+  ratingValue={ratingValue}
+  size={30}
+  fillColor="orange"
+  emptyColor="gray"
+/>
         {ratingValue > 0 && (
           <button onClick={resetFilter} className="btn btn-outline-secondary">
             Limpiar filtro
