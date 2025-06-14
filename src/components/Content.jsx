@@ -53,8 +53,9 @@ const handleRatingChange = (newRating) => {
 
   return (
     <>
-      <div className="full-width-banner">
-        <img src={headerImg} alt="Hackflix Banner" />
+      <div className="full-width-banner header-img-container">
+        <img src={headerImg} alt="Hackflix Banner" className="header-img" />
+        <div className="header-blur-bottom"></div>
       </div>
 
       <StarFilter ratingValue={minRating * 20} onRatingChange={handleRatingChange} />
