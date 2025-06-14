@@ -11,12 +11,12 @@ function Content() {
 
 const handleRatingChange = (newRating) => {
   console.log("Rating seleccionado (raw):", newRating);
-  // Si el rating es menor o igual a 5 (entero), asume que es estrellas directas
+ 
   let stars;
   if (newRating <= 5) {
     stars = newRating;
   } else {
-    // Si es múltiplo de 20 (20,40,60...), convierte a estrellas
+   
     stars = newRating / 20;
   }
   console.log("Estrellas calculadas:", stars);
@@ -46,7 +46,7 @@ const handleRatingChange = (newRating) => {
     fetchMovies();
   }, []);
 
-  // Filtrar películas con vote_average >= minRating * 2
+
   const filteredMovies = movies.filter(
     (movie) => movie.vote_average >= minRating * 2
   );
@@ -60,7 +60,7 @@ const handleRatingChange = (newRating) => {
       <StarFilter ratingValue={minRating * 20} onRatingChange={handleRatingChange} />
 
       <div className="container my-4">
-        <h2 className="mb-4 text-center">Películas</h2>
+        <h2 className="mb-4 text-center text-white">Películas</h2>
 
         <div className="row">
           {filteredMovies.length > 0 ? (
@@ -76,22 +76,7 @@ const handleRatingChange = (newRating) => {
                       e.target.src = "ruta/alternativa.jpg";
                     }}
                   />
-                  <div className="card-body">
-                    <h5 className="card-title">{movie.title}</h5>
-                    <p className="card-text">
-                      Año: {new Date(movie.release_date).getFullYear()}
-                    </p>
-                    <Rating
-                      ratingValue={movie.vote_average * 10}
-                      size={24}
-                      readonly
-                      fillColor="orange"
-                      emptyColor="lightgray"
-                    />
-                    <p className="card-text mt-2">
-                      Puntaje: {movie.vote_average.toFixed(1)} /10
-                    </p>
-                  </div>
+                  
                 </div>
               </div>
             ))
