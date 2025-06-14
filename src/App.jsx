@@ -24,7 +24,7 @@ function App() {
     top: 0,
     width: "100%",
     height: "100px", // 🌒 Un poco más de altura
-    background: "linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0))", // 🎨 Más opacidad
+    background: "linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(122, 7, 7, 0))", // 🎨 Más opacidad
     zIndex: 1,
         }}
       ></div>
