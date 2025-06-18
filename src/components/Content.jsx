@@ -57,7 +57,12 @@ function Content() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [hasMore]);
 
-  const filteredMovies = movies.filter(
+  // Elimina duplicados por id antes de renderizar
+  const uniqueMovies = Array.from(
+    new Map(movies.map((movie) => [movie.id, movie])).values()
+  );
+
+  const filteredMovies = uniqueMovies.filter(
     (movie) =>
       movie.vote_average >= minRating * 2 &&
       movie.title.toLowerCase().includes(search.toLowerCase())
