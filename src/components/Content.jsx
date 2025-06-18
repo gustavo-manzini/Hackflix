@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import headerImg from "../assets/Baner.png";
 import StarFilter from "./StarFilter";
+import SearchBar from "./SearchBar";
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 function Content() {
   const [movies, setMovies] = useState([]);
   const [minRating, setMinRating] = useState(0);
+  const [search, setSearch] = useState("");
 
   const handleRatingChange = (newRating) => {
     console.log("Rating seleccionado (raw):", newRating);
@@ -45,7 +47,9 @@ function Content() {
   }, []);
 
   const filteredMovies = movies.filter(
-    (movie) => movie.vote_average >= minRating * 2
+    (movie) =>
+      movie.vote_average >= minRating * 2 &&
+      movie.title.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
@@ -53,6 +57,8 @@ function Content() {
       <div className="full-width-banner header-img-container">
         <img src={headerImg} alt="Hackflix" className="header-img" />
       </div>
+
+      <SearchBar value={search} onChange={(e) => setSearch(e.target.value)} />
 
       <StarFilter
         ratingValue={minRating * 20}
