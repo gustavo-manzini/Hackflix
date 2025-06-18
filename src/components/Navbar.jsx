@@ -1,12 +1,15 @@
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg custom-navbar fixed-top">
+    <nav
+      className="navbar navbar-expand-lg custom-navbar"
+      style={{ position: "fixed", top: 0, width: "100%", zIndex: 1000 }}
+    >
       <div className="container-fluid">
         <a className="navbar-brand title" href="#">
           Hackflix
         </a>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler navbar"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
