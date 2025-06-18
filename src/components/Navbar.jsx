@@ -1,6 +1,6 @@
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg custom-navbar">
+    <nav className="navbar navbar-expand-lg custom-navbar fixed-top">
       <div className="container-fluid">
         <a className="navbar-brand title" href="#">
           Hackflix

@@ -10,6 +10,8 @@ function Content() {
   const [movies, setMovies] = useState([]);
   const [minRating, setMinRating] = useState(0);
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
 
   const handleRatingChange = (newRating) => {
     console.log("Rating seleccionado (raw):", newRating);
@@ -24,27 +26,37 @@ function Content() {
     setMinRating(stars);
   };
 
+  const fetchMovies = async (pageToLoad = 1) => {
+    try {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es-ES&page=${pageToLoad}`
+      );
+      const data = await response.json();
+      if (data.results.length === 0) setHasMore(false);
+      setMovies((prev) => [...prev, ...data.results]);
+    } catch (error) {
+      setHasMore(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const allMovies = [];
+    fetchMovies(page);
+    // eslint-disable-next-line
+  }, [page]);
 
-        for (let page = 1; page <= 3; page++) {
-          const response = await fetch(
-            `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=es-ES&page=${page}`
-          );
-          const data = await response.json();
-          allMovies.push(...data.results);
-        }
-
-        setMovies(allMovies);
-      } catch (error) {
-        console.error("Error al obtener películas:", error);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + window.scrollY >=
+          document.body.offsetHeight - 100 &&
+        hasMore
+      ) {
+        setPage((prev) => prev + 1);
       }
     };
-
-    fetchMovies();
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hasMore]);
 
   const filteredMovies = movies.filter(
     (movie) =>
