@@ -110,6 +110,7 @@
 }
 .content-overlay {
   position: relative;
+
   min-height: 100vh;
   padding-bottom: 150px;
   z-index: 2;
@@ -124,6 +125,8 @@
 .header-img {
   width: 100%;
   display: block;
+  z-index: 1;
+  filter: brightness(4);
 }
 
 .header-blur-bottom {
