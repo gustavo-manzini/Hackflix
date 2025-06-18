@@ -41,7 +41,6 @@ function Content() {
 
   useEffect(() => {
     fetchMovies(page);
-    // eslint-disable-next-line
   }, [page]);
 
   useEffect(() => {
