@@ -1,4 +1,3 @@
-// StarFilter.jsx
 import { Rating } from "react-simple-star-rating";
 
 export default function StarFilter({ ratingValue, onRatingChange }) {
@@ -18,7 +17,6 @@ export default function StarFilter({ ratingValue, onRatingChange }) {
       <div className="d-flex justify-content-center align-items-center gap-3 flex-wrap">
         <Rating
           onClick={(rate) => {
-            console.log("Rating en StarFilter (raw):", rate);
             onRatingChange(rate);
           }}
           ratingValue={ratingValue}
@@ -27,7 +25,10 @@ export default function StarFilter({ ratingValue, onRatingChange }) {
           emptyColor="gray"
         />
         {ratingValue > 0 && (
-          <button onClick={resetFilter} className="btn btn-outline-secondary">
+          <button
+            onClick={resetFilter}
+            className="btn btn-outline-secondary text-white"
+          >
             Limpiar filtro
           </button>
         )}

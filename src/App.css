@@ -143,3 +143,12 @@
   pointer-events: none;
   z-index: 2;
 }
+
+/* filtro de busqueda */
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+}

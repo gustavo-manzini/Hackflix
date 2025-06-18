@@ -86,7 +86,7 @@ function Content() {
               </div>
             ))
           ) : (
-            <p className="text-center">
+            <p className="text-center text-white">
               {movies.length === 0
                 ? "Cargando películas...."
                 : "Lo sentimos, no se encontraron películas con el rating solicitado."}
