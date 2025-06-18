@@ -83,7 +83,7 @@ function Content() {
           ) : (
             <p className="text-center">
               {movies.length === 0
-                ? "Cargando películas..."
+                ? "Cargando películas...."
                 : "Lo sentimos, no se encontraron películas con el rating solicitado."}
             </p>
           )}
