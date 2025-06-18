@@ -51,7 +51,7 @@ function Content() {
   return (
     <>
       <div className="full-width-banner header-img-container">
-        <img src={headerImg} alt="Hackflix " className="header-img" />
+        <img src={headerImg} alt="Hackflix" className="header-img" />
         <div className="header-blur-bottom"></div>
       </div>
 

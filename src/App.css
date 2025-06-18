@@ -110,7 +110,6 @@
 }
 .content-overlay {
   position: relative;
-  /* background-color: rgba(0, 0, 0, 0.692 */
   min-height: 100vh;
   padding-bottom: 150px;
   z-index: 2;

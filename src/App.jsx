@@ -6,7 +6,7 @@ import asientos from "./assets/asientos.png";
 
 function App() {
   return (
-    <div 
+    <div
       style={{
         position: "relative",
         backgroundImage: `url(${asientos})`,
