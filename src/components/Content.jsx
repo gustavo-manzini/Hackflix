@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Rating } from "react-simple-star-rating";
+// import { Rating } from "react-simple-star-rating";
 import headerImg from "../assets/Baner.png";
 import StarFilter from "./StarFilter";
 import SearchBar from "./SearchBar";
