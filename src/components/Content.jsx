@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import { Rating } from "react-simple-star-rating";
+import { motion } from "framer-motion"; // <-- Import framer-motion aquí
 import headerImg from "../assets/Baner.png";
 import StarFilter from "./StarFilter";
 import SearchBar from "./SearchBar";
+import MovieModal from "./MovieModal";
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
@@ -13,16 +14,11 @@ function Content() {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
-  const handleRatingChange = (newRating) => {
-    console.log("Rating seleccionado (raw):", newRating);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-    let stars;
-    if (newRating <= 5) {
-      stars = newRating;
-    } else {
-      stars = newRating / 20;
-    }
-    console.log("Estrellas calculadas:", stars);
+  const handleRatingChange = (newRating) => {
+    let stars = newRating <= 5 ? newRating : newRating / 20;
     setMinRating(stars);
   };
 
@@ -57,7 +53,6 @@ function Content() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [hasMore]);
 
-  // Elimina duplicados por id antes de renderizar
   const uniqueMovies = Array.from(
     new Map(movies.map((movie) => [movie.id, movie])).values()
   );
@@ -67,6 +62,16 @@ function Content() {
       movie.vote_average >= minRating * 2 &&
       movie.title.toLowerCase().includes(search.toLowerCase())
   );
+
+  const openModal = (movie) => {
+    setSelectedMovie(movie);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedMovie(null);
+  };
 
   return (
     <>
@@ -87,7 +92,16 @@ function Content() {
         <div className="row">
           {filteredMovies.length > 0 ? (
             filteredMovies.map((movie) => (
-              <div key={movie.id} className="col-md-6 col-lg-4 mb-4">
+              <motion.div
+                key={movie.id}
+                className="col-md-6 col-lg-4 mb-4"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                whileHover={{ scale: 1.05 }} // opcional: un pequeño efecto hover
+                style={{ cursor: "pointer" }}
+                onClick={() => openModal(movie)}
+              >
                 <div className="card h-100 movie-card-hover">
                   <img
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -99,7 +113,7 @@ function Content() {
                     }}
                   />
                 </div>
-              </div>
+              </motion.div>
             ))
           ) : (
             <p className="text-center text-white">
@@ -110,6 +124,13 @@ function Content() {
           )}
         </div>
       </div>
+
+      {/* Modal */}
+      <MovieModal
+        movie={selectedMovie}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </>
   );
 }
