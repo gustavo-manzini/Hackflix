@@ -152,3 +152,8 @@
   margin: 0 auto;
   padding: 10px;
 }
+
+/* Agrega esto a tu archivo de estilos globales */
+.blur-background {
+  filter: blur(6px);
+}

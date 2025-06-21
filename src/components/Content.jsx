@@ -75,53 +75,55 @@ function Content() {
 
   return (
     <>
-      <div className="full-width-banner header-img-container">
-        <img src={headerImg} alt="Hackflix" className="header-img" />
-      </div>
+      <div className={isModalOpen ? "blur-background" : ""}>
+        <div className="full-width-banner header-img-container">
+          <img src={headerImg} alt="Hackflix" className="header-img" />
+        </div>
 
-      <SearchBar value={search} onChange={(e) => setSearch(e.target.value)} />
+        <SearchBar value={search} onChange={(e) => setSearch(e.target.value)} />
 
-      <StarFilter
-        ratingValue={minRating * 20}
-        onRatingChange={handleRatingChange}
-      />
+        <StarFilter
+          ratingValue={minRating * 20}
+          onRatingChange={handleRatingChange}
+        />
 
-      <div className="container my-4">
-        <h2 className="mb-4 text-center text-white">Películas</h2>
+        <div className="container my-4">
+          <h2 className="mb-4 text-center text-white">Películas</h2>
 
-        <div className="row">
-          {filteredMovies.length > 0 ? (
-            filteredMovies.map((movie) => (
-              <motion.div
-                key={movie.id}
-                className="col-md-6 col-lg-4 mb-4"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                whileHover={{ scale: 1.05 }} // opcional: un pequeño efecto hover
-                style={{ cursor: "pointer" }}
-                onClick={() => openModal(movie)}
-              >
-                <div className="card h-100 movie-card-hover">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                    className="card-img-top"
-                    alt={movie.title}
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = "ruta/alternativa.jpg";
-                    }}
-                  />
-                </div>
-              </motion.div>
-            ))
-          ) : (
-            <p className="text-center text-white">
-              {movies.length === 0
-                ? "Cargando películas...."
-                : "Lo sentimos, no se encontraron películas con el rating solicitado."}
-            </p>
-          )}
+          <div className="row">
+            {filteredMovies.length > 0 ? (
+              filteredMovies.map((movie) => (
+                <motion.div
+                  key={movie.id}
+                  className="col-md-6 col-lg-4 mb-4"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  whileHover={{ scale: 1.05 }} // opcional: un pequeño efecto hover
+                  style={{ cursor: "pointer" }}
+                  onClick={() => openModal(movie)}
+                >
+                  <div className="card h-100 movie-card-hover">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                      className="card-img-top"
+                      alt={movie.title}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "ruta/alternativa.jpg";
+                      }}
+                    />
+                  </div>
+                </motion.div>
+              ))
+            ) : (
+              <p className="text-center text-white">
+                {movies.length === 0
+                  ? "Cargando películas...."
+                  : "Lo sentimos, no se encontraron películas con el rating solicitado."}
+              </p>
+            )}
+          </div>
         </div>
       </div>
 
