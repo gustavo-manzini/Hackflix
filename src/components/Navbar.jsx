@@ -31,7 +31,11 @@ function Navbar() {
             <Link className="nav-link " aria-current="page" to="/">
               Home
             </Link>
-            <Link className="nav-link" aria-current="page" to="/nosotros">
+            <Link
+              className="nav-link"
+              aria-current="page"
+              to="../components/Nosotros"
+            >
               Nosotros
             </Link>
           </div>
