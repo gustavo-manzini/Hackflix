@@ -8,7 +8,11 @@ function Navbar() {
     >
       <div className="container-fluid">
         <li className="navbar-brand title">
-          <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+          <Link
+            to="/"
+            style={{ color: "inherit", textDecoration: "none" }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             Hackflix
           </Link>
         </li>
@@ -28,7 +32,13 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
-            <Link className="nav-link " aria-current="page" to="/">
+            <Link
+              className="nav-link "
+              aria-current="page"
+              to="/"
+              style={{ color: "inherit", textDecoration: "none" }}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               Home
             </Link>
             <Link
