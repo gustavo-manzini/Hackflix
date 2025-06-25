@@ -3,6 +3,8 @@
   border: #ff0000 solid 2px;
   padding: 10px;
   color: black;
+  list-style: none;
+  cursor: pointer;
 }
 .title:hover {
   background-color: #ff0000;
@@ -45,6 +47,7 @@
   transition: background-color 0.3s, color 0.3s;
   border-radius: 4px;
   padding: 0.3rem 0.7rem;
+  margin: 10px;
 }
 
 .custom-navbar .nav-link:hover,
@@ -144,7 +147,6 @@
   z-index: 2;
 }
 
-/* filtro de busqueda */
 .search-bar {
   position: relative;
   width: 100%;
@@ -153,7 +155,12 @@
   padding: 10px;
 }
 
-/* Agrega esto a tu archivo de estilos globales */
 .blur-background {
   filter: blur(6px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
 }

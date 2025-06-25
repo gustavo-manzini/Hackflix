@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <nav
@@ -5,9 +7,11 @@ function Navbar() {
       style={{ position: "fixed", top: 0, width: "100%", zIndex: 1000 }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand title" href="#">
-          Hackflix
-        </a>
+        <li className="navbar-brand title">
+          <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+            Hackflix
+          </Link>
+        </li>
         <button
           className="navbar-toggler navbar"
           type="button"
@@ -24,9 +28,12 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto">
-            <a className="nav-link active" aria-current="page" href="#">
+            <Link className="nav-link " aria-current="page" to="/">
               Home
-            </a>
+            </Link>
+            <Link className="nav-link" aria-current="page" to="/nosotros">
+              Nosotros
+            </Link>
           </div>
         </div>
       </div>

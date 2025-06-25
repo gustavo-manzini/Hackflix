@@ -1,6 +1,8 @@
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Content from "./components/Content";
+import Nosotros from "./components/Nosotros";
+import "./App.css";
 import React from "react";
 import asientos from "./assets/asientos.png";
 
@@ -24,7 +26,6 @@ function App() {
           width: "100vw",
           height: "100vh",
           objectFit: "cover",
-          // Ajusta la opacidad aquí
           zIndex: -1,
           pointerEvents: "none",
           filter: "brightness(0.9)",
@@ -33,7 +34,10 @@ function App() {
       <div className="fade"></div>
       <div className="content-overlay">
         <Navbar />
-        <Content />
+        <Routes>
+          <Route path="/" element={<Content />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+        </Routes>
       </div>
     </div>
   );
