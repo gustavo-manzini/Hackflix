@@ -164,3 +164,12 @@
   margin: 0 auto;
   padding: 40px;
 }
+
+/* section movies */
+
+.section-movies {
+  color: white;
+  text-align: center;
+  height: 350px;
+  border: solid 1px black;
+}

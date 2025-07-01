@@ -4,6 +4,7 @@ import headerImg from "../assets/Baner.png";
 import StarFilter from "./StarFilter";
 import SearchBar from "./SearchBar";
 import MovieModal from "./MovieModal";
+import Pelicuasnuestras from "./Peliculasnuestras"; // <-- Importa el componente Pelis
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
@@ -86,6 +87,8 @@ function Content() {
           ratingValue={minRating * 20}
           onRatingChange={handleRatingChange}
         />
+
+        <Pelicuasnuestras />
 
         <div className="container my-4">
           <h2 className="mb-4 text-center text-white">Películas</h2>
