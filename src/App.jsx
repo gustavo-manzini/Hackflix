@@ -1,9 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Content from "./components/Content";
 import Nosotros from "./components/Nosotros";
 import "./App.css";
-import React from "react";
+
 import asientos from "./assets/asientos.png";
 import Peliculasnuestras from "./components/Peliculasnuestras";
 
@@ -35,14 +40,10 @@ function App() {
       <div className="fade"></div>
       <div className="content-overlay">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Content />} />
-          <Route path="/nosotros" element={<Nosotros />} />
-          <Route path="/Favoritas" element={<Peliculasnuestras />} />
-          </Routes>
+        <Outlet />
       </div>
     </div>
-  );  
+  );
 }
 
 export default App;

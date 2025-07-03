@@ -3,15 +3,22 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import Nosotros from "./components/Nosotros";
-
+import Peliculasnuestras from "./components/Peliculasnuestras.jsx";
+import Content from "./components/Content.jsx";
 const router = createBrowserRouter([
   {
-    path: "/*",
+    path: "/",
     element: <App />,
-  },
-  {
-    path: "/nosotros",
-    element: <Nosotros />,
+    children: [
+      {
+        path: "content",
+        element: <Content />,
+      },
+      {
+        path: "nosotros",
+        element: <Nosotros />,
+      },
+    ],
   },
 ]);
 
