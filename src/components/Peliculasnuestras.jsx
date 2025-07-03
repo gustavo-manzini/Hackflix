@@ -4,14 +4,14 @@ const peliculasManuales = [
   {
     id: 1,
     title: "Hackers",
-    // poster_path: "/hacker.jpg", // Usa la ruta de tu imagen local o una URL
+    poster_path: "/hacker.jpg", // Usa la ruta de tu imagen local o una URL
     vote_average: 8.2,
     overview: "Un grupo de jóvenes hackers se enfrenta a una gran corporación.",
   },
   {
     id: 2,
     title: "Matrix",
-    // poster_path: "/matrix.jpg",
+       poster_path: "/matrix.jpg",
     vote_average: 8.7,
     overview:
       "Un hacker descubre la verdad sobre su realidad y su papel en la guerra contra sus controladores.",
@@ -19,7 +19,7 @@ const peliculasManuales = [
   {
     id: 3,
     title: "Mr. Robot",
-    // poster_path: "/mrrobot.jpg",
+     poster_path: "/mrrobot.jpg",
     vote_average: 8.5,
     overview:
       "Un joven programador trabaja como ingeniero de ciberseguridad y hacker vigilante.",
@@ -27,7 +27,7 @@ const peliculasManuales = [
   {
     id: 4,
     title: "Tron",
-    // poster_path: "/tron.jpg",
+     poster_path: "/tron.jpg",
     vote_average: 7.8,
     overview:
       "Un programador es transportado al mundo digital y debe luchar por su vida.",

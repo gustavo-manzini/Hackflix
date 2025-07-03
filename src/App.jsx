@@ -5,6 +5,7 @@ import Nosotros from "./components/Nosotros";
 import "./App.css";
 import React from "react";
 import asientos from "./assets/asientos.png";
+import Peliculasnuestras from "./components/Peliculasnuestras";
 
 function App() {
   return (
@@ -37,10 +38,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Content />} />
           <Route path="/nosotros" element={<Nosotros />} />
-        </Routes>
+          <Route path="/Favoritas" element={<Peliculasnuestras />} />
+          </Routes>
       </div>
     </div>
-  );
+  );  
 }
 
 export default App;
