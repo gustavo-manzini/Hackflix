@@ -48,6 +48,13 @@ function Navbar() {
             >
               Nosotros
             </Link>
+            <Link
+              className="nav-link"
+              aria-current="page"
+              to={"../components/Peliculasnuestras"}
+            >
+              Favoritas
+            </Link>
           </div>
         </div>
       </div>

@@ -88,8 +88,6 @@ function Content() {
           onRatingChange={handleRatingChange}
         />
 
-        <Pelicuasnuestras />
-
         <div className="container my-4">
           <h2 className="mb-4 text-center text-white">Películas</h2>
 

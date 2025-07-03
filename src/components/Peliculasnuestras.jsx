@@ -52,6 +52,7 @@ function Peliculasnuestras() {
                     "https://via.placeholder.com/300x450?text=Sin+Imagen";
                 }}
               />
+
               <div className="card-body">
                 <h5 className="card-title">{movie.title}</h5>
                 <p className="card-text">{movie.overview}</p>
