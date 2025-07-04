@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion"; // <-- Import framer-motion aquí
+import { motion } from "framer-motion"; 
 import headerImg from "../assets/Baner.png";
 import StarFilter from "./StarFilter";
 import SearchBar from "./SearchBar";
 import MovieModal from "./MovieModal";
-import Pelicuasnuestras from "./Peliculasnuestras"; // <-- Importa el componente Pelis
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
@@ -13,8 +12,7 @@ function Content() {
   const [minRating, setMinRating] = useState(0);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
-
+  const [hasMore, setHasMore] = useState(true); 
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -100,7 +98,7 @@ function Content() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05 }} // opcional: un pequeño efecto hover
+                  whileHover={{ scale: 1.05 }} 
                   style={{ cursor: "pointer" }}
                   onClick={() => openModal(movie)}
                 >

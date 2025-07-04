@@ -7,7 +7,7 @@ import Peliculasnuestras from "./components/Peliculasnuestras.jsx";
 import Content from "./components/Content.jsx";
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/*",
     element: <App />,
     children: [
       {
