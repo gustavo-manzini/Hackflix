@@ -5,7 +5,7 @@ const peliculasManuales = [
   {
     id: 1,
     title: "Misterio abordo",
-    poster_path: "  /favoritas/misterio.jpg",
+    poster_path: "/favoritas/misterio.jpg",
     vote_average: 8.2,
     sinopsis: "Un grupo de jóvenes hackers se enfrenta a una gran corporación.",
     reseña:
