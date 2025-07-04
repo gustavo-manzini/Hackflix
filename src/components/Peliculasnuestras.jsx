@@ -111,8 +111,7 @@ function Peliculasnuestras() {
                   alt={selectedMovie.title}
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src =
-                      "https://via.placeholder.com/300x450?text=Sin+Imagen";
+                   
                   }}
                 />
                 <p>{selectedMovie.overview}</p>
