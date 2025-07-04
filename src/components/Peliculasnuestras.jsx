@@ -7,8 +7,7 @@ const peliculasManuales = [
     title: "Misterio abordo",
     poster_path: "/favoritas/misterio.jpg",
     vote_average: 8.2,
-    sinopsis: "Un grupo de jóvenes hackers se enfrenta a una gran corporación.",
-    reseña:
+    overview:
       "Misterio abordo es una pélicula que cumple con su objetivo principal: entretener. Con una propuesta sencilla pero efectiva. La cinta ofrece momentos divertidos y un ritmo ágil. Adam Sandler y Jennifer Aniston tienen buena química, lo cual ayuda a mantener el interés inclusive cuando el guion cae en situaciones poco creíbles. Sin embargo, aunque intenta homenajear al género de '¿Quien lo hizo?', su trato al misterio es superficial, con giros predecibles y un desarrollo de personaje bastante limitado. El humor, característico del estilo de Sandler, puede no ser el gusto de todos, ya que a veces suele recurrir a bromas simples o exageradas. Además, se apoya mucho en estereotipos culturales que podrian resultar forzados o poco originales.",
   },
   {
@@ -21,11 +20,11 @@ const peliculasManuales = [
   },
   {
     id: 3,
-    title: "Mr. Robot",
-    //  poster_path: "/mrrobot.jpg",
+    title: "Top Gun: Maverick",
+    poster_path: "/mrrobot.jpg",
     vote_average: 8.5,
     overview:
-      "Un joven programador trabaja como ingeniero de ciberseguridad y hacker vigilante.",
+      "Un La película es un acierto como secuela, galardonada con decenas de premios en varias categorías resaltando el avance generacional que tiene en comparación a la primera entrega. Los efectos, los sonidos y los planos son un espectáculo visual y auditivo que no deja a nadie insatisfecho. Pero eso no tapa los fallos argumentales, que se pueden llegar a ignorar, cuando se analizan las situaciones que se desarrollan. En taquilla fue un éxito, como secuela muy emotiva y en entretenimiento es un gran acierto sin importar el público que sea",
   },
 
 ];
@@ -71,7 +70,7 @@ function Peliculasnuestras() {
               />
               <div className="card-body">
                 <h5 className="card-title">{movie.title}</h5>
-                <p className="card-text">{movie.sinopsis}</p>
+                <p className="card-text">{movie.overview}</p>
                 <span className="badge bg-danger">⭐ {movie.vote_average}</span>
               </div>
             </div>
