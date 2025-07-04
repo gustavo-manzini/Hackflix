@@ -8,7 +8,7 @@ const peliculasManuales = [
     poster_path: "  /favoritas/misterio.jpg",
     vote_average: 8.2,
     sinopsis: "Un grupo de jóvenes hackers se enfrenta a una gran corporación.",
-    reseña: "Misterio abordo es una película emocionante que combina acción y tecnología.",
+    reseña: "Misterio abordo es una pélicula que cumple con su objetivo principal: entretener. Con una propuesta sencilla pero efectiva. La cinta ofrece momentos divertidos y un ritmo ágil. Adam Sandler y Jennifer Aniston tienen buena química, lo cual ayuda a mantener el interés inclusive cuando el guion cae en situaciones poco creíbles. Sin embargo, aunque intenta homenajear al género de '¿Quien lo hizo?', su trato al misterio es superficial, con giros predecibles y un desarrollo de personaje bastante limitado. El humor, característico del estilo de Sandler, puede no ser el gusto de todos, ya que a veces suele recurrir a bromas simples o exageradas. Además, se apoya mucho en estereotipos culturales que podrian resultar forzados o poco originales.",
   },
   {
     id: 2,
