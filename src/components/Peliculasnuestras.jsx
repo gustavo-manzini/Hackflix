@@ -70,8 +70,21 @@ function Peliculasnuestras() {
               />
               <div className="card-body">
                 <h5 className="card-title">{movie.title}</h5>
-                <p className="card-text">{movie.overview}</p>
+                <p className="card-text">
+                  {movie.overview.length > 80
+                    ? movie.overview.slice(0, 80) + "..."
+                    : movie.overview}
+                </p>
                 <span className="badge bg-danger">⭐ {movie.vote_average}</span>
+                <button
+                  className="btn btn-primary btn-sm mt-2"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleCardClick(movie);
+                  }}
+                >
+                  Ver más
+                </button>
               </div>
             </div>
           </div>
