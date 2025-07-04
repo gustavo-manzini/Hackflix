@@ -21,7 +21,7 @@ const peliculasManuales = [
   {
     id: 3,
     title: "Top Gun: Maverick",
-    poster_path: "/mrrobot.jpg",
+    poster_path: "/favoritas/topgun.jpg",
     vote_average: 8.5,
     overview:
       "Un La película es un acierto como secuela, galardonada con decenas de premios en varias categorías resaltando el avance generacional que tiene en comparación a la primera entrega. Los efectos, los sonidos y los planos son un espectáculo visual y auditivo que no deja a nadie insatisfecho. Pero eso no tapa los fallos argumentales, que se pueden llegar a ignorar, cuando se analizan las situaciones que se desarrollan. En taquilla fue un éxito, como secuela muy emotiva y en entretenimiento es un gran acierto sin importar el público que sea",
@@ -44,7 +44,7 @@ function Peliculasnuestras() {
   };
 
   return (
-    <div className="container mt-5  my-4">
+    <div className="container  mt-5  my-4">
       <h2 className="mb-4 text-center text-white">Películas Nuestras</h2>
       <div className="row">
         {peliculasManuales.map((movie) => (
