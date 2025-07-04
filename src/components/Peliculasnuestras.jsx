@@ -27,14 +27,7 @@ const peliculasManuales = [
     overview:
       "Un joven programador trabaja como ingeniero de ciberseguridad y hacker vigilante.",
   },
-  {
-    id: 4,
-    title: "Tron",
-    // poster_path: "/tron.jpg",
-    vote_average: 7.8,
-    overview:
-      "Un programador es transportado al mundo digital y debe luchar por su vida.",
-  },
+
 ];
 
 function Peliculasnuestras() {
