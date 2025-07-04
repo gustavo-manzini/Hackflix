@@ -3,8 +3,8 @@ import React from "react";
 const peliculasManuales = [
   {
     id: 1,
-    title: "Hackers",
-    // poster_path: "/hacker.jpg",
+    title: "Misterio abordo",
+    poster_path: ".././assets/favoritas/misterio.jpg",
     vote_average: 8.2,
     overview: "Un grupo de jóvenes hackers se enfrenta a una gran corporación.",
   },
@@ -36,7 +36,7 @@ const peliculasManuales = [
 
 function Peliculasnuestras() {
   return (
-    <div className="container my-4">
+    <div className="container mt-5  my-4">
       <h2 className="mb-4 text-center text-white">Películas Nuestras</h2>
       <div className="row">
         {peliculasManuales.map((movie) => (
