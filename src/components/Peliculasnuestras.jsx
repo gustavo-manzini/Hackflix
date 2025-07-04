@@ -76,15 +76,7 @@ function Peliculasnuestras() {
                     : movie.overview}
                 </p>
                 <span className="badge bg-danger">⭐ {movie.vote_average}</span>
-                <button
-                  className="btn btn-primary btn-sm mt-2"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleCardClick(movie);
-                  }}
-                >
-                  Ver más
-                </button>
+               
               </div>
             </div>
           </div>
