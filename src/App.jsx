@@ -40,7 +40,12 @@ function App() {
       <div className="fade"></div>
       <div className="content-overlay">
         <Navbar />
-        <Outlet />
+          <Routes>
+            <Route path="/" element={<Content />} />
+            <Route path="/nosotros" element={<Nosotros />} />
+            <Route path="/peliculasnuestras" element={<Peliculasnuestras />} />
+          </Routes>
+          
       </div>
     </div>
   );

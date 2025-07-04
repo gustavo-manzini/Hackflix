@@ -18,6 +18,10 @@ const router = createBrowserRouter([
         path: "nosotros",
         element: <Nosotros />,
       },
+      {
+        path: "peliculasnuestras",
+        element: <Peliculasnuestras />,
+      }
     ],
   },
 ]);
