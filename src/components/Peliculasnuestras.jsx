@@ -8,15 +8,16 @@ const peliculasManuales = [
     poster_path: "  /favoritas/misterio.jpg",
     vote_average: 8.2,
     sinopsis: "Un grupo de jóvenes hackers se enfrenta a una gran corporación.",
-    reseña: "Misterio abordo es una pélicula que cumple con su objetivo principal: entretener. Con una propuesta sencilla pero efectiva. La cinta ofrece momentos divertidos y un ritmo ágil. Adam Sandler y Jennifer Aniston tienen buena química, lo cual ayuda a mantener el interés inclusive cuando el guion cae en situaciones poco creíbles. Sin embargo, aunque intenta homenajear al género de '¿Quien lo hizo?', su trato al misterio es superficial, con giros predecibles y un desarrollo de personaje bastante limitado. El humor, característico del estilo de Sandler, puede no ser el gusto de todos, ya que a veces suele recurrir a bromas simples o exageradas. Además, se apoya mucho en estereotipos culturales que podrian resultar forzados o poco originales.",
+    reseña:
+      "Misterio abordo es una pélicula que cumple con su objetivo principal: entretener. Con una propuesta sencilla pero efectiva. La cinta ofrece momentos divertidos y un ritmo ágil. Adam Sandler y Jennifer Aniston tienen buena química, lo cual ayuda a mantener el interés inclusive cuando el guion cae en situaciones poco creíbles. Sin embargo, aunque intenta homenajear al género de '¿Quien lo hizo?', su trato al misterio es superficial, con giros predecibles y un desarrollo de personaje bastante limitado. El humor, característico del estilo de Sandler, puede no ser el gusto de todos, ya que a veces suele recurrir a bromas simples o exageradas. Además, se apoya mucho en estereotipos culturales que podrian resultar forzados o poco originales.",
   },
   {
     id: 2,
-    title: "Matrix",
-    // poster_path: "/matrix.jpg",
+    title: "El Padrino",
+    poster_path: "/favoritas/ElPadrino.webp",
     vote_average: 8.7,
     overview:
-      "Un hacker descubre la verdad sobre su realidad y su papel en la guerra contra sus controladores.",
+      "Una Excelente película ganadora de varios premios, consagrando a un joven Al Pacino como (Michael Corleone) en unos de sus primeros films protagónicos, nos cuenta una historia de drama, crimen gangster italoamericano usando como eje principal a un soldado volviendo de la segunda guerra mundial envuelto en tramas de traición y complot contra la familia Corleone por la defensa del poder criminal en Nueva York.",
   },
   {
     id: 3,
